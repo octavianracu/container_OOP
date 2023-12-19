@@ -1,0 +1,34 @@
+class Container:
+  
+  def __init__(self, first = None, second = None):
+    self.first = first
+    self.second = second
+  
+  def __str__(self):
+   
+    m = []
+    n = [self.first, self.second]
+    for i in n:
+        if i != None:
+            m.append(i)
+    m.sort(reverse=False)
+    l = str(m)
+    return l
+  
+  def __eq__(self, other):
+     a = Container(self.first, self.second)
+     b = Container(self.first, self.second)
+     if a.first == b.first and a.second == b.second:
+        return True
+     
+
+
+c1 = Container() 
+c2 = Container(10,100) 
+c3 = Container(10,100) 
+
+print(c1)
+print(c2)
+print(c3)
+
+print (c2==c3)
