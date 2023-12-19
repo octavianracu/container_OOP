@@ -1,3 +1,4 @@
+
 class Container:
   
   def __init__(self, first = None, second = None):
@@ -5,23 +6,19 @@ class Container:
     self.second = second
   
   def __str__(self):
-   
     m = []
-    n = [self.first, self.second]
-    for i in n:
-        if i != None:
-            m.append(i)
+    if self.first != None:    
+        m.append(self.first)
+    if self.second != None:
+       m.append(self.second)
+
     m.sort(reverse=False)
     l = str(m)
     return l
   
   def __eq__(self, other):
-     a = Container(self.first, self.second)
-     b = Container(self.first, self.second)
-     if a.first == b.first and a.second == b.second:
-        return True
-     
-
+    return self.first == other.first and self.second == other.second
+    
 
 c1 = Container() 
 c2 = Container(10,100) 
@@ -31,4 +28,5 @@ print(c1)
 print(c2)
 print(c3)
 
-print (c2==c3)
+print(c2==c3)
+
